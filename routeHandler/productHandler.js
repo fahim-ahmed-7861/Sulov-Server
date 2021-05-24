@@ -17,6 +17,8 @@ const Category = new mongoose.model("Category", categorySchema);
 
 router.post('/add', async (req, res) => {
 
+    console.log(req.body);
+
     
     try {
 
