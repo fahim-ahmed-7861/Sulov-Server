@@ -12,7 +12,6 @@ const password = "iKwGWMdRwIxz2KhU"
 
 var cors = require('cors');
 
-const a;
 
 const url = `mongodb+srv://sulovEcommerceAdmin:${password}@cluster0.ch6qp.mongodb.net/SulovDb?retryWrites=true&w=majority`;
 
@@ -27,7 +26,7 @@ app.use(cors())
 
 app.use(fileUpload())
 
-app.use(express.static('products'));
+app.use(express.static('images'));
 
 //app.use(express.json());
 
