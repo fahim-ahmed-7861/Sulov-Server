@@ -58,6 +58,7 @@ router.post('/add',async(req,res)=>
 
 router.get('/',(req,res)=>
 {
+  
     Category.find({})
     .populate('products')
     .exec((err,data)=>
@@ -77,7 +78,18 @@ router.get('/',(req,res)=>
 
                 dataRead : true,
 
-                result : data,
+                result : {
+
+                  category : data,
+
+                  randomProduct : [],
+
+                  newlyAddedProduct : []
+
+
+
+
+                },
                 
                 message: "Successfully Read",
             })
@@ -89,7 +101,7 @@ router.get('/',(req,res)=>
 
 router.get('/:id',(req,res)=>
 {
-    Category.find({_id : req.params.id})
+    Category.findOne({_id : req.params.id})
     .populate('products')
     .exec((err,data)=>
     {
